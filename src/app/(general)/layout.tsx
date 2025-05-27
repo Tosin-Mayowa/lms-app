@@ -27,7 +27,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <section className="w-screen max-h-[1500px] h-[900px] flex flex-col special:h-1400px md:h-[1200px] lg:flex lg:flex-row lg:h-screen lg:justify-around">
         {children}
+        </section>
+    
       </body>
     </html>
   );
