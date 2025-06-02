@@ -4,9 +4,10 @@
   --secondary-color: #00F5E9;
   --primary-color: #007C77;
   --accent-color:#002927;
+  --tertiary-color:#F6AE2D;
   --mobile-size:14px;
   --default-size:18px;
-  --desktop-size:20px;
+  --desktop-size:22px;
   --heading-mobile:25px;
   --heading-desktop:50px;
   --heading-tablet:40px;
@@ -21,15 +22,19 @@
 @theme{
   --color-background: var(--primary-color);
   --color-foreground: var(--secondary-color);
+  --color-deep:var(--tertiary-color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --text-desktop: var(--heading-desktop);
   --text-sm:var(--mobile-size);
-  --text-md:var(--default-size)
+  --text-md:var(--default-size);
   --text-lg:var(--desktop-size);
   --text-mobile:var(--heading-mobile);
   --text-tablet:var(--heading-tablet);
   --breakpoint-special:500px;
+  --breakpoint-sm400: 400px;
+  --breakpoint-sm1025: 1025px;
+  --breakpoint-screen1200: 1100px;
   
 }
 

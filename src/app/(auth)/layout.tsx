@@ -1,6 +1,8 @@
+import { SidebarComp } from "@/Components/SidebarComp/SidebarComp";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// import Sidebar from "./@sidebar/default";
+
 
 
 
@@ -10,17 +12,21 @@ export const metadata: Metadata = {
 };
 
 export default function AuthLayout({
-  children,
+  children,sidebar
 }: Readonly<{
   children: React.ReactNode;
+  sidebar: React.ReactNode;
+  
+
 }>) {
   return (
-    <html lang="en">
-      <body
-        className=""
-      >
-        {children}
-      </body>
-    </html>
+    
+        <section className="w-screen h-screen xl:max-h-[1400px] xl:flex">
+         <SidebarComp/>
+        <div className="w-full h-full xl:w-[50%] ">
+           {children}
+        </div>
+        </section>
+
   );
 }
