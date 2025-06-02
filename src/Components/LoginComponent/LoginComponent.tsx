@@ -87,7 +87,7 @@ export const LoginComponent = () => {
               {!isClick?"Login":"Login in..."}
             </button>
           </div>
-          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-30px] lg:flex-row lg:justify-between">
+          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-30px] lg:flex-row lg:justify-between xl:flex-row xl:justify-between">
             <p className="text-white font-bold text-[16px] md:text-sm xl:text-[#666362]">
               {`Don't have accout?`}
               <Link
