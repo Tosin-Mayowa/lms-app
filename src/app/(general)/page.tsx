@@ -18,8 +18,8 @@ export default function Home() {
             built to transform the way individuals, educators, and institutions
             deliver and experience online learning. Designed for accessibility
             and ease-of-use, ILearner enables seamless course creation, student
-            management, assessments, and real-time progress tracking — all in
-            one centralized platform. Whether you're a tutor, training
+            management, assessments, and real-time progress tracking all in
+            one centralized platform. Whether you are a tutor, training
             organization, or school administrator, ILearner gives you the tools
             to educate, engage, and evaluate learners from anywhere in the
             world.

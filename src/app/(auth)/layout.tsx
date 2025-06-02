@@ -1,6 +1,5 @@
 import { SidebarComp } from "@/Components/SidebarComp/SidebarComp";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 // import Sidebar from "./@sidebar/default";
 
 
@@ -12,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function AuthLayout({
-  children,sidebar
+  children
 }: Readonly<{
   children: React.ReactNode;
-  sidebar: React.ReactNode;
+  
   
 
 }>) {

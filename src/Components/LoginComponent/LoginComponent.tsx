@@ -87,9 +87,9 @@ export const LoginComponent = () => {
               {!isClick?"Login":"Login in..."}
             </button>
           </div>
-          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-30px] xl:flex-row xl:justify-between">
+          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-30px] lg:flex-row lg:justify-between">
             <p className="text-white font-bold text-[16px] md:text-sm xl:text-[#666362]">
-              Don't have accout?
+              {`Don't have accout?`}
               <Link
                 href="/signUp"
                 className="text-[#DDD8C4] ml-[2px] text-sm decoration-none font-extrabold cursor-pointer md:text-sm xl:text-background"
@@ -101,7 +101,7 @@ export const LoginComponent = () => {
               href="/forgot-password"
               className="mt-[2px] font-bold text-[#DDD8C4] text-sm xl:text-background cursor-pointer"
             >
-              forgot password.
+              forgot password?
             </Link>
           </div>
         </div>
