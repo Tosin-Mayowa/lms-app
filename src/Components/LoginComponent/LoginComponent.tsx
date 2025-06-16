@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-export const LoginComponent = () => {
+export const LoginComponent:React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [email,setEmail]=useState<string>('')
   const [password,setPassword]=useState<string>('')
@@ -80,7 +80,7 @@ export const LoginComponent = () => {
           {/* Button */}
           <div className="w-[80%] h-[60px] self-center sm400:mt-[-50px] xl:mt-[-100px]">
             <button 
-            className="w-full h-full bg-background cursor-pointer text-white font-bold text-[18px] rounded-[10px] md:text-md"
+            className="w-full h-full bg-background cursor-pointer text-white font-bold text-[18px] hover:bg-[#1a8d89] rounded-[10px] md:text-md"
             onClick={handleClick}
               disabled={!email || !password}
             >

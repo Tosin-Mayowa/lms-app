@@ -3,6 +3,7 @@
 :root {
   --secondary-color: #00F5E9;
   --primary-color: #007C77;
+  /* --primary-color-hover: #1a8d89; */
   --accent-color:#002927;
   --tertiary-color:#F6AE2D;
   --mobile-size:14px;

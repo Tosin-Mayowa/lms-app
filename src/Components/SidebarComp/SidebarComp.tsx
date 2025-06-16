@@ -2,8 +2,8 @@
 import {useState, useEffect} from "react";
 
 import { useRouter } from "next/navigation";
-export const SidebarComp= ()=>{
-     const [isDesktop, setIsDesktop] = useState(false);
+export const SidebarComp:React.FC= ()=>{
+     const [isDesktop, setIsDesktop] = useState<boolean>(false);
      const router=useRouter();
 
   useEffect(() => {
