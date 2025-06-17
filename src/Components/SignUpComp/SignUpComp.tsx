@@ -123,7 +123,7 @@ export const SignUpComp = () => {
             <p className="text-white font-bold text-[16px] md:text-sm xl:text-[#666362]">
               {`Already have accout?`}
               <Link
-                href="/signUp"
+                href="/login"
                 className="text-[#DDD8C4] ml-[2px] text-[16px] decoration-none font-extrabold cursor-pointer md:text-sm xl:text-background"
               >
                 Login
