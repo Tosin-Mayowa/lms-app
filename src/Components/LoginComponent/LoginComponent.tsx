@@ -21,9 +21,12 @@ const router=useRouter();
    });
    console.log({resp});
    
-   if(resp.data.status){
+   if(resp.data.status==="success"){
+    setEmail("");
+    setPassword("");
     router.push('/dashboard')
    }
+   
   }
   return (
     <>
