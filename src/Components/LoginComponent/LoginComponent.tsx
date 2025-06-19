@@ -1,24 +1,27 @@
 "use client";
+import axiosInstance from "@/app/_lib/axiosConfig";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
+import {useRouter} from "next/navigation"
 export const LoginComponent:React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [email,setEmail]=useState<string>('')
   const [password,setPassword]=useState<string>('')
   const [isClick,setIsClick]=useState<boolean>(false)
-
+const router=useRouter();
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1025);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  const handleClick=()=>{
-    setIsClick(true)
-    setEmail('');
-    setPassword('');
-    setTimeout(()=>{setIsClick(false)},1000)
+  const handleClick=async ()=>{
+   const resp=await axiosInstance.post("/api/v1/auth/login",{
+       email,password
+   });
+   if(resp.data.message){
+    router.push('/dashboard')
+   }
   }
   return (
     <>
@@ -80,7 +83,7 @@ export const LoginComponent:React.FC = () => {
           {/* Button */}
           <div className="w-[80%] h-[60px] self-center sm400:mt-[-50px] xl:mt-[-100px]">
             <button 
-            className="w-full h-full bg-background cursor-pointer text-white font-bold text-[18px] hover:bg-[#1a8d89] rounded-[10px] md:text-md"
+            className={`w-full h-full cursor-pointer  font-bold text-[18px]  ${password.length!==0&&email.length!==0?"bg-background text-white hover:bg-[#1a8d89]":"bg-[#5ba7a4] text-white"} rounded-[10px] md:text-md`}
             onClick={handleClick}
               disabled={!email || !password}
             >

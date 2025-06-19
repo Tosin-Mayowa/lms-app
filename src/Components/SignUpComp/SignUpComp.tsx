@@ -1,21 +1,49 @@
 "use client";
+import axiosInstance from "@/app/_lib/axiosConfig";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/navigation";
+import { UserInfoContext } from "@/app/_lib/contextApi";
 export const SignUpComp = () => {
+  const user=useContext(UserInfoContext)
+  const router=useRouter();
   const [isMobile, setIsMobile] = useState(false);
   const [inputData, setInputData] = useState({
     fullname: "",
     email: "",
     password: "",
   });
+  const sendData=async ()=>{
+    try{
+      const {fullname,email,password}=inputData;
+      user?.updateEmail(email)
+  const res = await axiosInstance.post("/api/v1/auth/register",{
+fullname,email,password,
+    isActive:false
+  });
+  console.log({res});
+if(res.data.message){
+   router.push('/phoneNumber')
+}
+    }catch(e){
+      console.log(e)
+    }
+  }
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1025);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-  const handleClick = () => {};
+  const handleClick = () => {
+    sendData();
+    setInputData(prev=>({...prev,...{
+    fullname: "",
+    email: "",
+    password: "",
+  }}));
+   
+  };
   return (
     <>
       <div
@@ -110,7 +138,7 @@ export const SignUpComp = () => {
           {/* Button */}
           <div className="w-[80%] h-[60px] self-center">
             <button
-              className="w-full h-full bg-background cursor-pointer text-white font-bold text-[18px] hover:bg-[#1a8d89] rounded-[10px] md:text-md"
+              className={`w-full h-full cursor-pointer font-bold text-[18px]  ${inputData.email&&inputData.fullname&&inputData.password?"bg-background text-white hover:bg-[#1a8d89]":"bg-[#5ba7a4] text-white"} rounded-[10px] md:text-md`}
               onClick={handleClick}
               disabled={
                 !inputData.email || !inputData.password || !inputData.fullname
