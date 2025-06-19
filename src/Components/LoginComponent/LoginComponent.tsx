@@ -19,7 +19,9 @@ const router=useRouter();
    const resp=await axiosInstance.post("/api/v1/auth/login",{
        email,password
    });
-   if(resp.data.message){
+   console.log({resp});
+   
+   if(resp.data.status){
     router.push('/dashboard')
    }
   }
