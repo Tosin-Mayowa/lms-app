@@ -7,7 +7,7 @@ export const LoginComponent:React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [email,setEmail]=useState<string>('')
   const [password,setPassword]=useState<string>('')
-  const [isClick,setIsClick]=useState<boolean>(false)
+  
 const router=useRouter();
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1025);
@@ -87,7 +87,7 @@ const router=useRouter();
             onClick={handleClick}
               disabled={!email || !password}
             >
-              {!isClick?"Login":"Login in..."}
+              Login
             </button>
           </div>
           <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-30px] lg:flex-row lg:justify-between xl:flex-row xl:justify-between">

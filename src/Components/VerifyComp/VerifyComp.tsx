@@ -65,7 +65,9 @@ export const VerifyComp = () => {
         phone: user?.phone,
         code: fullPin,
       });
-      router.push("/login");
+    if (resp.data.message) {
+        router.push("/login");
+    }
     } catch (err) {
       console.error("Verification failed", err);
       alert("Invalid or expired code.");
