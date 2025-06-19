@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { UserInfoContext } from "@/app/_lib/contextApi";
+import Image from "next/image";
 export const SignUpComp = () => {
   const user=useContext(UserInfoContext)
   const router=useRouter();
@@ -58,9 +59,17 @@ if(res.data.message){
         className="w-full h-full flex flex-col justify-start lg:justify-center  items-center bg-cover bg-center "
       >
         <div className="w-full h-full p-2 sm400:h-[80%]  lg:h-[60%] md:h-[70%] flex flex-col items-start justify-between xl:h-full">
-          <div className="w-[80%] self-center xl:flex xl:flex-col items-center">
-            <h1 className="text-white ">Logo</h1>
-            <h1 className="text-mobile font-bold text-white mt-[20px] sm400:mt-[60px] md:text-desktop xl:mt-0 xl:text-background">
+          <div className="w-[80%]  self-center xl:flex xl:flex-col items-center">
+           <div className="space-x-0  flex items-end md:h-[150px] p-0 m-0 xl:hidden">
+                        <Image
+                          src="/image/ILearnerLogo.png"
+                          alt=""
+                          width={600}
+                          height={600}
+                          className="p-0 m-0  w-full h-full lg:object-contain"
+                        />
+                      </div>
+            <h1 className="text-mobile text-center font-bold text-white  md:text-desktop xl:mt-0 xl:text-background">
               Sign Up
             </h1>
             <p className="hidden text-center xl:flex xl:w-[80%] text-sm font-light xl:text-[#666362]">
@@ -69,7 +78,7 @@ if(res.data.message){
               courses. Create account to get started.
             </p>
           </div>
-          <div className="w-[80%] h-[45%] sm400:h-[45%] self-center">
+          <div className="w-[80%] h-[47%] sm400:h-[45%] self-center">
             <div className="w-full h-[60px] ">
               <label
                 htmlFor="fullname"
@@ -136,7 +145,7 @@ if(res.data.message){
             </div>
           </div>
           {/* Button */}
-          <div className="w-[80%] h-[60px] self-center">
+          <div className="w-[80%] h-[60px] self-center ">
             <button
               className={`w-full h-full cursor-pointer font-bold text-[18px]  ${inputData.email&&inputData.fullname&&inputData.password?"bg-background text-white hover:bg-[#1a8d89]":"bg-[#5ba7a4] text-white"} rounded-[10px] md:text-md`}
               onClick={handleClick}
@@ -147,7 +156,7 @@ if(res.data.message){
               Sign Up
             </button>
           </div>
-          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-69px] lg:mt-[-33px] xl:mt-[-20px] lg:flex-row lg:justify-between xl:flex-row xl:justify-between">
+          <div className="w-[80%] h-[60px] self-center flex flex-col mt-[-20px] sm400:mt-[-30px] xl:mt-[-20px]  lg:flex-row lg:justify-between xl:flex-row xl:justify-between">
             <p className="text-white font-bold text-[16px] md:text-sm xl:text-[#666362]">
               {`Already have accout?`}
               <Link

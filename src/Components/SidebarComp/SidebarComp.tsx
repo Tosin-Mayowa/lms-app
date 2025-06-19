@@ -2,6 +2,7 @@
 import {useState, useEffect} from "react";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 export const SidebarComp:React.FC= ()=>{
      const [isDesktop, setIsDesktop] = useState<boolean>(false);
      const router=useRouter();
@@ -27,9 +28,20 @@ export const SidebarComp:React.FC= ()=>{
               }
             : {}
           }
-          className="hidden sm1025:flex flex-col xl:w-[50%] xl:h-full xl:justify-center xl:items-center  bg-cover bg-center ">
+          className="hidden sm1025:flex flex-col xl:w-[50%] xl:h-full xl:justify-between xl:items-center  bg-cover bg-center ">
           {/* heading box */}
-          <div className="w-full flex flex-col">
+          <div className="h-[120px]">
+            <Image
+                     src="/image/ILearnerLogo.png"
+                     alt=""
+                     width={600}
+                     height={600}
+                     
+                   className="w-full h-full lg:object-contain"
+                   />
+          </div>
+          <div>
+            <div className="w-full flex flex-col">
             <h1 className="text-[50px] font-light text-center text-white">
               Welcome To ILearner
             </h1>
@@ -49,6 +61,7 @@ export const SidebarComp:React.FC= ()=>{
               <button className="w-[200px] cursor-pointer rounded-xl h-full font-bold border border-solid text-white bg-none border-background hover:bg-background hover:border-none"
               onClick={handleBack}>Back</button>
             </div>
+          </div>
           </div>
         </div>    
         </>

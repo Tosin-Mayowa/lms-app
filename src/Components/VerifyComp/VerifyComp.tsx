@@ -4,6 +4,7 @@ import axiosInstance from "@/app/_lib/axiosConfig";
 import { UserInfoContext } from "@/app/_lib/contextApi";
 import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export const VerifyComp = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -12,7 +13,7 @@ export const VerifyComp = () => {
   const user = useContext(UserInfoContext);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1025);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -86,6 +87,15 @@ export const VerifyComp = () => {
       }
       className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4 bg-center bg-cover"
     >
+      <div className="space-x-0  flex items-end md:h-[150px] p-0 m-0 xl:hidden">
+                              <Image
+                                src="/image/ILearnerLogo.png"
+                                alt=""
+                                width={600}
+                                height={600}
+                                className="p-0 m-0  w-full h-full lg:object-contain"
+                              />
+                            </div>
       <h2
         className={`text-xl md:text-2xl font-semibold mb-4 text-center ${
           isMobile ? "text-white" : "text-[#1f1e1e]"

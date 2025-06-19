@@ -5,7 +5,15 @@ export default function Home() {
   return (
     <>
       <div className="w-full h-[100%] flex flex-col justify-between pl-2 special:pl-4 special:h-[140%] md:h-[120%] xl:h-[100%] xl:w-[45%] xl:justify-around xl:pl-[0.5rem]">
-        <h1 className="">Logo</h1>
+        <div className="flex p-0 m-0 h-[100px] w-[30%] ml-[-10px] md:ml-[-20px] lg:ml-[-60px] xl:ml-[-20px]">
+                                     <Image
+                                       src="/image/ILearnerLogo.png"
+                                       alt=""
+                                       width={600}
+                                       height={600}
+                                       className="p-0 m-0  w-full h-full lg:object-contain"
+                                     />
+                                   </div>
         <div className="w-full mt-[70px] special:mt-[60px] lg:mt-[30px]">
           <h1 className="text-mobile font-bold text-background md:text-tablet lg:text-desktop">
             Learning
@@ -25,7 +33,7 @@ export default function Home() {
             world.
           </p>
         </div>
-        <div className="w-full special:mt-[40px] xl:mt-0">
+        <div className="w-full sm400:mt-[40px] special:mt-[40px] xl:mt-0">
          <Button/>
         </div>
       </div>

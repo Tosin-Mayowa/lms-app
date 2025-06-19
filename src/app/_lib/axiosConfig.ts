@@ -1,22 +1,10 @@
 // axiosInstance.js
 import axios from "axios";
-
-const baseURL =
-  process.env.NODE_ENV === "development"
-    ? process.env.NEXT_PUBLIC_API_BASE_URL
-    : process.env.NEXT_PUBLIC_PRODUCTION_API;
-
-if (!baseURL) {
-  throw new Error("API base URL is not defined in environment variables.");
-}
-
-if (process.env.NODE_ENV === "development") {
-  console.log("Axios Base URL:", baseURL);
-}
-
+console.log({url:process.env.NEXT_PUBLIC_API_BASE_URL});
+// "https://lms-server-bwyt.onrender.com"
 const axiosInstance = axios.create({
-  baseURL,
-  withCredentials: true,
+  baseURL:"https://lms-server-bwyt.onrender.com",
+   withCredentials: true, 
   timeout: 30000,
   headers: {
     "Content-Type": "application/json",
@@ -24,3 +12,4 @@ const axiosInstance = axios.create({
 });
 
 export default axiosInstance;
+

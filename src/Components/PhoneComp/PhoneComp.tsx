@@ -5,6 +5,7 @@ import PhoneInput from 'react-phone-number-input'
 import axiosInstance from '@/app/_lib/axiosConfig'
 import { UserInfoContext } from '@/app/_lib/contextApi'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 
 export const PhoneComp=()=>{
@@ -36,7 +37,7 @@ console.log({value},typeof value);
     }
           
           useEffect(() => {
-            const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+            const checkMobile = () => setIsMobile(window.innerWidth < 1025);
             checkMobile();
             window.addEventListener("resize", checkMobile);
             return () => window.removeEventListener("resize", checkMobile);
@@ -58,6 +59,15 @@ console.log({value},typeof value);
         }
       
       className="flex flex-col items-center justify-center min-h-screen bg-white p-4 bg-center bg-cover">
+         <div className="space-x-0  flex items-end md:h-[150px] p-0 m-0 xl:hidden">
+                                      <Image
+                                        src="/image/ILearnerLogo.png"
+                                        alt=""
+                                        width={600}
+                                        height={600}
+                                        className="p-0 m-0  w-full h-full lg:object-contain"
+                                      />
+                                    </div>
         <h2 className={`text-xl md:text-2xl font-semibold mb-4 text-center ${isMobile?"text-white":"text-[#1f1e1e]"}`}>Enter your PhoneNumber</h2>
 
         <div className="flex  w-[80%] h-[60px]">

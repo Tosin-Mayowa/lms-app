@@ -38,6 +38,10 @@
   --breakpoint-screen1200: 1100px;
   
 }
+.Login{
+  padding: 0;
+  margin: 0;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
